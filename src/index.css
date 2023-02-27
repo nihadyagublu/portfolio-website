@@ -1,13 +1,633 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+  background: rgb(97, 76, 117);
+  color: white;
+  height: 100%;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+html {
+  height: 100%;
+}
+
+:root {
+  --themeColor: linear-gradient(10deg, #ffaa00, #ff6a00);
+  --contentColor: white;
+  --firstLevFontSize: 24px;
+  --secLevFontSize: 16px;
+  --genFontSize: 12px;
+  --marginForLeftAndRightNavInHeader: 3rem;
+}
+
+.mainHeader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  height: 4rem;
+  width: 100%;
+  background-color: rgb(118, 56, 165);
+  color: var(--contentColor);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 1px 5px 5px rgb(21, 6, 32);
+  font-weight: bold;
+}
+
+.rightNavList {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 36rem;
+}
+
+.rightNavList .nav-item a {
+  color: #ffffff;
+}
+
+.nav-item .active {
+  padding-bottom: 6px;
+  border-bottom: 3px solid #ffffff;
+}
+.rightNavList .nav-item a:hover {
+  padding-bottom: 6px;
+  border-bottom: 3px solid #ffffff;
+  cursor: pointer;
+}
+
+/* a,
+a:visited {
+  color: white;
+}
+.rightNavList li a:hover,
+.rightNavList li a.active {
+  cursor: pointer;
+  color: rgb(10, 7, 60);
+  padding-bottom: 5px;
+  border-bottom: 3px solid rgb(10, 7, 60);
+} */
+
+.rightNavIcon {
+  display: none;
+  /* display: flex; */
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: var(--contentColor);
+  margin-right: var(--marginForLeftAndRightNavInHeader);
+}
+
+.leftSign {
+  margin-left: var(--marginForLeftAndRightNavInHeader);
+}
+
+.backdrop {
+  position: absolute;
+  top: 0;
+  height: 0;
+  width: 100vw;
+  height: 100vh;
+  /* background-color: rgb(5, 16, 16); */
+  background-color: #000000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  overflow-y: hidden;
+}
+
+.menuList {
+  color: white;
+}
+
+.menuList li:hover {
+  background-color: rgb(118, 56, 165);
+  cursor: pointer;
+}
+
+.MenuIcon {
+  cursor: pointer;
+  scale: 1.6;
+  transition: all 900ms;
+}
+
+.MenuIcon:active {
+  scale: 1.5;
+}
+
+/*This down below is for Home Page*/
+.homePageContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 0;
+  align-items: center;
+  margin: 10rem 7rem;
+}
+.leftSideHome {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.introGreeting h1,
+.introGreeting h3,
+.introGreeting h4 {
+  margin: 0;
+}
+
+.introGreeting h1 {
+  font-size: 4rem;
+  background-color: rgb(10, 7, 60);
+  width: 30rem;
+  text-align: center;
+  color: rgb(118, 56, 165);
+}
+.introGreeting h3 {
+  font-size: 1.5rem;
+}
+
+.introPhoto {
+  width: 57vw;
+  /* border: 1px solid black; */
+  height: auto;
+}
+.introPhoto img {
+  width: 45%;
+  height: 50%;
+  border-radius: 20%;
+  border: 2px solid red;
+}
+
+.rightSideHome {
+  width: 100%;
+  min-height: 95%;
+  box-sizing: border-box;
+  background-color: rgb(10, 7, 60);
+  box-shadow: 0px 1px 30px 0px rgb(16, 15, 44);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  padding: 0rem 1rem;
+}
+
+/*This down below is for ABOUT component*/
+.aboutSection {
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.aboutHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1rem;
+  font-size: 2rem;
+  text-align: center;
+}
+
+/* .aboutHeader h1 {
+  text-shadow: 16px -12px 9px white;
+} */
+
+.quote {
+  border: 1px solid black;
+  padding: 0.1rem 1rem;
+  background-color: rgb(10, 7, 60);
+  border-radius: 6px;
+
+  gap: 0;
+}
+
+.quote p {
+  font-style: italic;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+}
+
+.aboutMain {
+  margin-top: 2rem;
+  margin-bottom: 5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 0rem;
+}
+
+.aboutPhoto {
+  /* border: 1px solid black; */
+  width: 50%;
+}
+.aboutPhoto img {
+  width: 65%;
+
+  border-radius: 10%;
+  border: 1px red solid;
+}
+
+.aboutParagraphSection {
+  /* border: 1px solid black; */
+  width: 100%;
+  min-height: 95%;
+  box-sizing: border-box;
+  padding: 0 4rem;
+  margin-top: 0rem;
+  margin-left: 5rem;
+}
+.aboutParagraphSection p {
+  font-size: 1.2rem;
+}
+
+/* This down below is for Projects section*/
+
+.ProjectSection {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.projectsHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1rem;
+  font-size: 2rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+.projectsIntro {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.projectsIconPhoto {
+  width: 40%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  /* border: 1px solid; */
+}
+
+.projectsIconPhoto img {
+  width: 45%;
+  border: 1px red solid;
+  border-radius: 10%;
+  /* border-top-right-radius: 10%;
+  border-bottom-right-radius: 10%; */
+}
+
+.projectsIntroPar {
+  width: 45rem;
+  min-height: 95%;
+  box-sizing: border-box;
+  padding: 0 2rem;
+  margin-top: 0rem;
+  background-color: rgb(10, 7, 60);
+  border: 1px solid;
+}
+
+.projectsIntroPar p {
+  font-size: 1rem;
+}
+
+.projectsList {
+  margin-top: 5rem;
+  display: flex;
+  /* margin-bottom: 5rem; */
+
+  justify-content: center;
+  align-items: center;
+}
+.projectsList ul {
+  /* list-style: none; */
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  justify-content: center;
+  place-items: center;
+}
+
+/*This down below is for Single Project*/
+
+.single-project-container {
+  /* border-color: white white white white; */
+  box-sizing: border-box;
+  width: 48%;
+
+  min-height: 95%;
+  /* background-color: rgb(10, 7, 60); */
+  background-color: rgb(40, 18, 56);
+  transition: all 0.5s;
+  /* display: flex;
+  flex-direction: column;
+  align-items: center; */
+}
+.single-project-container img {
+  width: 100%;
+}
+
+.single-project-details {
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 95%;
+  padding: 1rem 0.7rem;
+  /* display: flex;
+  flex-direction: column; */
+}
+
+.single-project-par {
+  /* border: 1px solid red; */
+  box-sizing: border-box;
+  width: 100%;
+  /* max-width: 95%; */
+  min-height: 95%;
+  box-sizing: border-box;
+  word-wrap: normal;
+  /* word-break: break-all; */
+}
+
+.single-project-actions {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 95%;
+}
+
+.single-project-actions button {
+  color: rgb(10, 7, 60);
+  border-radius: 6px;
+  height: 2rem;
+}
+
+.single-project-actions button:hover {
+  cursor: pointer;
+  background-color: rgb(152, 82, 206);
+}
+
+.single-project-container:hover {
+  transform: scale(1.08);
+}
+
+/* This down below is for Contact Section  */
+
+.contactMeSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.contactMeHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1rem;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.contactMain {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.leftSideContactMain {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 20rem;
+  padding: 1rem;
+}
+
+.contactInfo p {
+  font-size: 1.1rem;
+}
+
+.rightSideContactMain {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.rightSideContactMain form {
+  /* border: 1px solid black; */
+  width: 38rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  /* padding: 2rem; */
+}
+
+.formNameAndEmail {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.formSubjectAndMessage {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.rightSideContactMain form input {
+  border-radius: 6px;
+  padding: 0.5rem;
+}
+
+.rightSideContactMain form textarea {
+  height: 10rem;
+  border-radius: 6px;
+  padding: 0.5rem;
+}
+
+.rightSideContactMain form input,
+.rightSideContactMain form textarea {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+  font-size: 1rem;
+}
+
+.formActions {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.formActions button {
+  border-radius: 6px;
+  padding: 0.4rem;
+  width: 15%;
+  background-color: rgb(10, 7, 60);
+  color: white;
+  font-size: 1rem;
+}
+
+.formActions button:hover {
+  background-color: rgb(62, 159, 2);
+  cursor: pointer;
+}
+
+.contactIcons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.githubIcon:hover,
+.linkedInIcon:hover {
+  scale: 1.2;
+  fill: rgb(11, 18, 84);
+  cursor: pointer;
+}
+
+a {
+  color: rgb(10, 7, 60);
+}
+
+.footerSection {
+  background-color: rgb(10, 7, 60);
+  height: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/*This down below is for modal */
+.modal {
+  width: 32vw;
+
+  box-sizing: border-box;
+  /* width: clamp(50%, 700px, 90%); */
+
+  /* height: min(25%, 400px); */
+  margin: auto;
+  min-width: 40%;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: #000000e1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modalHeader {
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border-radius: 12px 12px 0 0;
+  height: 30%;
+}
+
+.modalBody {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  border-radius: 0 0 12px 12px;
+}
+
+.modalBody p {
+  padding: 0 1rem;
+}
+.modalActions {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+}
+.modalActions button {
+  border-radius: 6px;
+  width: 4rem;
+
+  min-height: 95%;
+  box-sizing: border-box;
+  padding: 0.5rem;
+}
+
+.error {
+  background-color: rgb(46, 3, 3);
+}
+
+.success {
+  background-color: rgb(4, 57, 46);
+}
+
+.modalActions button:hover {
+  cursor: pointer;
+  background-color: rgb(210, 213, 175);
+}
+/*
+background-color: rgb(5, 236, 186);
+background-color: rgb(4, 57, 46);
+*/
+
+@media screen and (max-width: 768px) {
+  .titleNav {
+    display: none;
+  }
+
+  .rightNavIcon {
+    display: block;
+  }
+
+  .menuList {
+    list-style: none;
+  }
+  .menuListItem {
+    font-size: 6vh;
+  }
+
+  .menuListItem a {
+    color: white;
+  }
 }
