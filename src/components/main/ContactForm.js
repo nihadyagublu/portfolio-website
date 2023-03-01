@@ -45,16 +45,8 @@ export default function ContactForm({ setSuccess, sendEnteredData, setError }) {
     <div className="rightSideContactMain">
       <form onSubmit={submitHandler}>
         <div className="formNameAndEmail">
-          <input
-            style={{ width: "18rem" }}
-            placeholder="YOUR NAME AND SURNAME"
-            ref={nameAndSurnameRef}
-          />
-          <input
-            style={{ width: "18rem" }}
-            placeholder="YOUR EMAIL"
-            ref={emailRef}
-          />
+          <input placeholder="YOUR NAME AND SURNAME" ref={nameAndSurnameRef} />
+          <input placeholder="YOUR EMAIL" ref={emailRef} />
         </div>
         <div className="formSubjectAndMessage">
           <input placeholder="ENTER SUBJECT" ref={subjectRef} />

@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 function Backdrop(props) {
   return (
     <motion.div
-      className="backdrop"
+      className="modalBackdrop"
       onClick={props.onClick}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}

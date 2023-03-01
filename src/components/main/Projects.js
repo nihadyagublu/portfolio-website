@@ -8,7 +8,7 @@ function Projects() {
       <header className="projectsHeader">
         <h1
           style={{
-            color: "rgb(10, 7, 60)",
+            color: "var(--theme-second-color)",
           }}
         >
           MY

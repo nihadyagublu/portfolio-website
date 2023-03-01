@@ -1,5 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-scroll";
+import CloseIcon from "@mui/icons-material/Close";
 
 export default function NewSideMenu({ onClick }) {
   const dropIn = {
@@ -14,7 +15,7 @@ export default function NewSideMenu({ onClick }) {
     },
     exit: {
       opacity: 0,
-      x: 50,
+      x: -100,
       transition: { duration: 0.5 },
     },
   };
@@ -22,12 +23,13 @@ export default function NewSideMenu({ onClick }) {
   return (
     <motion.div
       onClick={onClick}
-      className="backdrop"
+      className="backdropNewSideMenu"
       variants={dropIn}
       initial="hidden"
       animate="visible"
       exit="exit"
     >
+      <CloseIcon className="closeIcon" />
       <ul className="menuList">
         <li className="menuListItem">
           <Link

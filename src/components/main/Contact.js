@@ -74,7 +74,7 @@ function Contact() {
         <h1 style={{ color: "white" }}>CONTACT</h1>
         <h1
           style={{
-            color: "rgb(10, 7, 60)",
+            color: "var(--theme-second-color)",
           }}
         >
           ME
@@ -87,32 +87,26 @@ function Contact() {
             <p align="justify">
               You can contact me here via using this form or by directly
               emailing me at :{" "}
-              <b style={{ backgroundColor: "rgb(10, 7, 60)" }}>
+              <b style={{ backgroundColor: "var(--theme-second-color)" }}>
                 nihad.yagublu@gmail.com.
               </b>
             </p>
-            <p align="justify" style={{ marginTop: "2rem" }}>
+            {/* <p align="justify" style={{ marginTop: "2rem" }}>
               Still no response ? (which would be almost impossible, but in life
               still anything may happen) just email me in my second account at:
-              <b style={{ backgroundColor: "rgb(10, 7, 60)" }}>
+              <b style={{ backgroundColor: "var(--theme-second-color)" }}>
                 nihad.yagublu@outlook.com{" "}
               </b>
-            </p>
+            </p> */}
             <section className="contactIcons">
               <a href="https://github.com/nihadyagublu/" target="_blank">
-                <GitHubIcon
-                  className="githubIcon"
-                  style={{ fontSize: "2rem" }}
-                />
+                <GitHubIcon className="githubIcon" />
               </a>
               <a
                 href="https://www.linkedin.com/in/nihad-yagublu-409a61231/"
                 target="_blank"
               >
-                <LinkedInIcon
-                  className="linkedInIcon"
-                  style={{ fontSize: "2rem" }}
-                />
+                <LinkedInIcon className="linkedInIcon" />
               </a>
             </section>
           </section>

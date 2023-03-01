@@ -16,70 +16,69 @@ function MainNavigation() {
   };
 
   return (
-    <>
-      <header className="mainHeader">
-        <div className="leftSign">N.Y.</div>
+    <header className="mainHeader">
+      <div className="leftSign">
+        <h3>N.Y.</h3>
+      </div>
 
-        <nav className="titleNav">
-          <ul className="rightNavList">
-            <li className="nav-item">
-              <Link
-                to="home"
-                spy={true}
-                smooth={true}
-                offset={-200}
-                duration={500}
-              >
-                {" "}
-                HOME
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link
-                to="about"
-                spy={true}
-                smooth={true}
-                offset={-110}
-                duration={500}
-              >
-                ABOUT{" "}
-              </Link>{" "}
-            </li>
-            <li className="nav-item">
-              <Link
-                to="projects"
-                spy={true}
-                smooth={true}
-                offset={-65}
-                duration={500}
-              >
-                {" "}
-                PROJECTS
-              </Link>{" "}
-            </li>
-            <li className="nav-item">
-              <Link
-                to="contact"
-                spy={true}
-                smooth={true}
-                offset={50}
-                duration={500}
-              >
-                {" "}
-                CONTACT
-              </Link>{" "}
-            </li>
-          </ul>
-        </nav>
-        <nav className="rightNavIcon">
-          <MenuIcon className="MenuIcon" onClick={showMenu} />
-        </nav>
-      </header>
-
+      <nav className="titleNav">
+        <ul className="rightNavList">
+          <li className="nav-item">
+            <Link
+              to="home"
+              spy={true}
+              smooth={true}
+              offset={-200}
+              duration={500}
+            >
+              {" "}
+              HOME
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link
+              to="about"
+              spy={true}
+              smooth={true}
+              offset={-110}
+              duration={500}
+            >
+              ABOUT{" "}
+            </Link>{" "}
+          </li>
+          <li className="nav-item">
+            <Link
+              to="projects"
+              spy={true}
+              smooth={true}
+              offset={-65}
+              duration={500}
+            >
+              {" "}
+              PROJECTS
+            </Link>{" "}
+          </li>
+          <li className="nav-item">
+            <Link
+              to="contact"
+              spy={true}
+              smooth={true}
+              offset={50}
+              duration={500}
+            >
+              {" "}
+              CONTACT
+            </Link>{" "}
+          </li>
+        </ul>
+      </nav>
+      <nav className="rightNavIcon">
+        <MenuIcon className="MenuIcon" onClick={showMenu} />
+      </nav>
       <AnimatePresence>
         {backdropOpen && <NewSideMenu onClick={exitMenu} />}
       </AnimatePresence>
-    </>
+    </header>
   );
 }
 
