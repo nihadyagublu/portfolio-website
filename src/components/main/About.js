@@ -69,8 +69,9 @@ export default function About() {
               }}
             >
               HTML, CSS(SASS/SCSS, Bootstrap, Tailwind), Javascript,
-              ReactJS(React Redux, Redux Toolkit, React Router, React Transition
-              Group, Framer Motion), Next.js, Typescript, Java(SE) and MongoDB.
+              React.js(React Redux, Redux Toolkit, React Router, React
+              Transition Group, Framer Motion), Next.js, Typescript, Java(SE)
+              and MongoDB.
             </b>
           </p>
         </section>
